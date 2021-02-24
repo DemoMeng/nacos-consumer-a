@@ -1,0 +1,15 @@
+server:
+  tomcat:
+    basedir: /usr/local #配置临时目录
+  port: 1234
+
+spring:
+  application:
+    name: nacos-consumer-a
+
+
+#spring:
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: @nacosAddress@ #读取pom文件中的配置信息

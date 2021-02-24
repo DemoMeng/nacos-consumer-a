@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 #'@nacosAddress@' #读取pom文件中的配置信息
+      config:
+        server-addr: 127.0.0.1:8848
+        ext-config:
+          - data-id: mqz-data-id.yml
+            refresh: true
+        file-extension: yaml
+        prefix: nacos-consumer-a
+  profiles:
+    active: dev
+
+
