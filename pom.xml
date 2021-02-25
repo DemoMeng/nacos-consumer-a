@@ -11,6 +11,7 @@
     <groupId>com.mqz.nacos.consumer.a</groupId>
     <artifactId>nacos-consumer-a</artifactId>
     <version>0.0.1</version>
+    <packaging>jar</packaging>
     <name>nacos-consumer-a</name>
     <description>the client of nacos by mqz</description>
     <properties>
@@ -68,11 +69,11 @@
         </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-starter-alibaba-nacos-discovery -->
-        <dependency>
+        <!--<dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
             <version>2.2.1.RELEASE</version>
-        </dependency>
+        </dependency>-->
 
         <!--
         org.yaml.snakeyaml.scanner.ScannerException: while scanning for the next token
@@ -101,32 +102,72 @@
         </dependencies>
     </dependencyManagement>
 
+
+    <!--  -->
     <profiles>
+
         <profile>
-            <id>test</id>
+            <id>dev</id>
             <properties>
-                <profileActive>test</profileActive>
+                <profileActive>dev</profileActive>
                 <nacosAddress>127.0.0.1:8848</nacosAddress>
+                <nacosNameSpace>a77c2420-289a-44de-8d50-cef6f8efa40f</nacosNameSpace>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
         </profile>
-
+        <profile>
+            <id>test</id>
+            <properties>
+                <profileActive>test</profileActive>
+                <nacosAddress>127.0.0.1:8848</nacosAddress>
+                <nacosNameSpace>9c00d0d8-de4e-4134-8072-e371470997f6</nacosNameSpace>
+            </properties>
+        </profile>
         <profile>
             <id>prod</id>
             <properties>
                 <profileActive>prod</profileActive>
                 <nacosAddress>127.0.0.1:8848</nacosAddress>
+                <nacosNameSpace>86748f55-bb25-4fdd-a197-ee0d914dcf91</nacosNameSpace>
             </properties>
         </profile>
     </profiles>
 
     <build>
+
+        <filters>
+            <!-- 指定filter,根据最终profile下的env属性获取对应的配置文件 -->
+            <filter>src/main/resources/application-${profileActive}.yml</filter>
+        </filters>
+
+        <!-- 开启资源过滤，让Maven能解析资源文件中的Maven属性 -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/webapp</directory>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+                <filtering>true</filtering>
+                <targetPath>META-INF/resources</targetPath>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.mqz.nacos.consumer.a.NacosConsumerAApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
