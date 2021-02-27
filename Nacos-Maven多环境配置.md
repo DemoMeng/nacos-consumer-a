@@ -5,6 +5,10 @@
 - 1.Maven配置文件中配置dev、prod、test的配置分别对应不同的NacosServerAddress、NacosNameSpace等，详情可参考本项目的pom.xml配置
 - 2.NacosServer：localhost:8848/nacos 中分别设置dev、prod、test的nameSpace，需要关联到Maven中的dev、prod、test等
 
+- 3.Nacos配置文件的命名规则：
+ * #${prefix}-${spring.profile.active}.${file-extension}
+ * # ${spring.application.name}-${spring.profile.active}.${file-extension}
+
 
 
 # Maven多环境启动

@@ -1,9 +1,11 @@
 package com.mqz.nacos.consumer.a.web;
 
 import com.alibaba.nacos.api.config.annotation.NacosValue;
+import com.mqz.nacos.consumer.a.common.WebRequestMapping;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2021/2/24
  */
 @RestController
-@RequestMapping("/a")
+@RequestMapping(WebRequestMapping.PREFIX+"/a")
+@RefreshScope //动态刷新读取Nacos配置文件
 public class ANacosWebController {
 
     private final static Logger log = LoggerFactory.getLogger(ANacosWebController.class);
@@ -36,6 +39,14 @@ public class ANacosWebController {
         log.info("配置中心："+configUrl);
         return String.format("Nacos客户端A:你好，%s。配置中心：%s,%s",name,configName,configUrl);
     }
+
+    @GetMapping("/gateway")
+    public String index(){
+        log.info("从网关过来的请求");
+        return String.format("从网关过来的请求");
+    }
+
+
 
 
 }

@@ -103,7 +103,7 @@
     </dependencyManagement>
 
 
-    <!--  -->
+    <!-- Maven多环境配置 -->
     <profiles>
 
         <profile>

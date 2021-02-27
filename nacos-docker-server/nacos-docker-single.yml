@@ -1,17 +1,20 @@
-version: "3.7"
-services:
-  nacos:
-    image: nacos/nacos-server:latest
-    container_name: nacos-standalone
-    environment:
-      - PREFER_HOST_MODE=hostname
-      - MODE=standalone
-    volumes:
-      - /usr/local/nacos-docker:/standalone-logs/
-      #- ./init.d/custom.properties:/home/nacos/init.d/custom.properties
-    ports:
-      - "8848:8848"
-    restart: on-failure
+#version: "3.7"
+#services:
+#  nacos:
+#    image: nacos/nacos-server:latest
+#    container_name: nacos-swarm-1
+#    environment:
+#      - PREFER_HOST_MODE=hostname
+#      - MODE=standalone
+#    volumes:
+#      - /usr/local/nacos-docker:/standalone-logs/
+#      #- ./init.d/custom.properties:/home/nacos/init.d/custom.properties
+#    ports:
+#      - "8848:8848"
+#    restart: on-failure
+#networks:
+#  nacos_net:
+#    driver: bridge
 #  prometheus:
 #    container_name: prometheus
 #    image: prom/prometheus:latest
@@ -28,3 +31,65 @@ services:
 #    ports:
 #      - 3000:3000
 #    restart: on-failure
+
+version: "3.7"
+services:
+  nacos-1:
+    hostname: nacos-1
+    image: nacos/nacos-server:latest
+    environment:
+      PREFER_HOST_MODE=hostname
+      NACOS_SERVERS=nacos-1:8848 #nacos-2:8848 nacos-3:8848
+      SPRING_DATASOURCE_PLATFORM=mysql
+      MYSQL_SERVICE_HOST=127.0.0.1
+      MYSQL_SERVICE_DB_NAME=nacos_config
+      MYSQL_SERVICE_PORT=3306
+      MYSQL_SERVICE_USER=root
+      MYSQL_SERVICE_PASSWORD=mengqizhang
+    volumes:
+      - /usr/local/nacos-docker:/standalone-logs/
+    ports:
+      - "8848:8848"
+      - "9555:9555"
+    networks:
+      - prod
+    restart: on-failure
+#    deploy:
+#      placement:
+#        constraints:
+#          - node.id == yuhh7ndhj2a5luthmjsln4s1w
+#  nacos-2:
+#    hostname: nacos-2
+#    image: nacos/nacos-server:latest
+#    env_file:
+#      - ./env/fxq-nacos-hostname.env
+#    volumes:
+#      - /mnt/logs/nacos2:/home/nacos/logs
+#    ports:
+#      - "8848:8848"
+#    networks:
+#      - prod
+#    restart: on-failure
+#    deploy:
+#      placement:
+#        constraints:
+#          - node.id == pb3q5g3s0cw544i1eaq4nrvq1
+#  nacos-3:
+#    hostname: nacos-3
+#    image: nacos/nacos-server:latest
+#    env_file:
+#      - ./env/fxq-nacos-hostname.env
+#    volumes:
+#      - /mnt/logs/nacos3:/home/nacos/logs
+#    ports:
+#      - "8848:8848"
+#    networks:
+#      - prod
+#    restart: on-failure
+#    deploy:
+#      placement:
+#        constraints:
+#          - node.id == nrc3nqtrj60y3r0ygyl55vsc8
+networks:
+  prod:
+    external: true
