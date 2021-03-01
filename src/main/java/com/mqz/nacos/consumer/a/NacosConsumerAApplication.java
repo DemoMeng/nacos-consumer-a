@@ -4,6 +4,7 @@ package com.mqz.nacos.consumer.a;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @author mqz
@@ -12,11 +13,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @abount https://github.com/DemoMeng
  *
  *   NacosPropertySource:读取Nacos配置中心的配置，Nacos配置是手动添加的也能导入外部文件。
- *
- *
  */
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableFeignClients(basePackages = {"com.mqz.nacos.consumer.a.**"})
 //@NacosPropertySource(dataId = "mqz-data-id", autoRefreshed = true)  //使用 @NacosPropertySource 加载 dataId 为 example 的配置源，并开启自动更新：
 public class NacosConsumerAApplication {
 
