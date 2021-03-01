@@ -1,0 +1,38 @@
+#version: '3.1'
+#services:
+#  mysql5.7:
+#    image: mysql:5.7
+#    container_name: mysql5.7
+#    restart: on-failure
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=mengqizhang
+#    command:
+      #mysql5.7及以上 版本 默认连接方式 不是以密码形式连接 所以远程连接不方便 改为密码连接
+#      --default-authentication-plugin=mysql_native_password
+#      --character-set-server=utf8mb4
+#      --collation-server=utf8mb4_general_ci
+#      --explicit_defaults_for_timestamp=true
+#      --lower_case_table_names=1
+#      --max_allowed_packet=128M
+#      --sql-mode="STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION,NO_ZERO_DATE,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO"
+#    ports:
+#      - 0.0.0.0:3306:3306
+#    volumes:
+#      - /data:/var/lib/mysql
+#      - /data:/etc/mysql/conf.d
+#      - /data:/logs
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql7ByCompose
+    ports:
+      - "3306:3306"
+    volumes:
+      - /data/log:/var/log/mysql
+      - /data/data:/var/lib/mysql
+      - /data/conf:/etc/mysql
+    privileged: true #针对chown: changing ownership of '/var/lib/mysql/': Input/output error 没权限的情况下
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: "mengqizhang"

@@ -32,6 +32,9 @@
 #      - 3000:3000
 #    restart: on-failure
 
+
+
+
 version: "3.7"
 services:
   nacos-1:
