@@ -23,4 +23,9 @@
 - 因为是单服务器上无法实现多个节点，这个项目模拟nacos-provider-a的另外节点
 - 服务提供方a的另外一个节点
 - Nacos服务注册中，配置中心
+
+
+#SpringBoot、SpringCloud、SpringCloudAlibaba三者版本兼容参考：
+![版本兼容](images/springboot-cloud-alibaba三者对应版本.jpg)
+
  
