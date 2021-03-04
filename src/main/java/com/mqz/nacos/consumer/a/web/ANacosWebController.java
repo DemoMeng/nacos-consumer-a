@@ -58,4 +58,9 @@ public class ANacosWebController {
         return providerService.call();
     }
 
+    @GetMapping("/aliyun/docker/images/test")
+    public String aliyunImages(){
+        return "ok";
+    }
+
 }
