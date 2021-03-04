@@ -1,8 +1,9 @@
+FROM java:8
 #镜像的制作人
 MAINTAINER mqz
-ENV APP_NAME="naco-consumer-a"
+ENV APP_NAME="nacos-consumer-a-0.0.1"
 #定义jar包名称 给个默认值
-ARG JAR_NAME=${APP_NAME}.jar
+ARG JAR_NAME=${APP_NAME}
 #此处必须这么指定，ARG参数在最终的ENTRYPOINT执行时会出现问题
 ENV FILE_NAME="${JAR_NAME}.jar"
 ENV WORK_DIR="/home/mqz/aliyunImages/${APP_NAME}"
