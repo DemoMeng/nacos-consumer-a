@@ -7,4 +7,19 @@
     
 
 
+# 服务器安装docker-compose 
+1. github手动下载文件docker-compose-Linux-x86_64：https://github.com/docker/compose/releases/tag/1.25.0-rc4
+2. 将文件上传到/usr/local/bin/ 目录下，重命名为docker-compose，修改文件权限 : chmod +x /usr/local/bin/docker-compose
+3. 安装完成：docker-compose -v查看版本
+
+
+#docker 设置镜像源，解决pull拉取慢的问题：
+- 1.修改(没有就创建) /etc/docker/daemon.json为：
+   {
+    "registry-mirrors": ["https://9cpn8tt6.mirror.aliyuncs.com"]
+   }
+- 2.重新加载：  [root@mqz docker]# systemctl daemon-reload
+- 3.重启docker：[root@mqz docker]# systemctl restart docker
+
+
 
