@@ -18,7 +18,10 @@ services:
     env_file:
       - nacos-hostname.env  #读取mysql的配置文件，nacos使用mysql持久化的方式
     volumes:
+      # mac和linux目录挂载
       - /usr/local/nacos-docker/nacos-1/:/home/nacos/logs/  # /home/nacos  是nacos-docker容器的目录， /usr/local/nacos-docker-1 是宿主机的目录
+      # Window目录挂载结构
+      # - /F/mqz/a-mqz-project/docker-mysql-volumn/nacos:/home/nacos/logs/  # /home/nacos  是nacos-docker容器的目录， /usr/local/nacos-docker-1 是宿主机的目录
     ports:
       - "8848:8848"
       - "9555:9555"

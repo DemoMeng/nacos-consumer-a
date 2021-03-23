@@ -32,6 +32,10 @@ services:
       - /data/log:/var/log/mysql
       - /data/data:/var/lib/mysql
       - /data/conf:/etc/mysql
+      # 下面是windows环境下目录挂载示例，和mac、linux稍微有点不同
+      # - /F/mqz/a-mqz-project/docker-mysql-volumn/log:/var/log/mysql
+      # - /F/mqz/a-mqz-project/docker-mysql-volumn/mysql/data/data:/var/lib/mysql
+      # - /F/mqz/a-mqz-project/docker-mysql-volumn/conf:/etc/mysql
     privileged: true #针对chown: changing ownership of '/var/lib/mysql/': Input/output error 没权限的情况下
     restart: on-failure
     environment:
