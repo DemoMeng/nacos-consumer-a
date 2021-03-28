@@ -23,3 +23,22 @@
 
 
 
+# mysql 权限问题： 
+ - ![权限问题](images/mysql权限问题.png)
+ 
+ - 查看权限： ![查看权限](images/查看mysql权限.png)
+ 
+ - 解决： 
+   1. grant all privileges on *.* to 'root'@'%' with grant option;
+   2. flush privileges;
+ 
+ 
+ 
+ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'mengqizhang' WITH GRANT OPTION;
+
+
+
+
+
+
+

@@ -14,7 +14,10 @@ spring:
         prefix: nacos-consumer-a
         #这里配置nameSpace是去读取指定nameSpace中的配置，如果不配置这个nameSpace的话默认读取public的配置文件（上面的注册中心同理）
         namespace: @nacosNameSpace@   #nameSpace相当于一个环境的区分， 现在设置的是dev、test、prod等，需要结合maven的profile使用
+
+    #hystrix
+    circuitbreaker:
+      hystrix:
+        enabled: true
   profiles:
     active: @profileActive@
-
-

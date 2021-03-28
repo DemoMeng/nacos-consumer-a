@@ -6,8 +6,6 @@ server:
 spring:
   application:
     name: nacos-consumer-a
-
-
 #spring:
 #  cloud:
 #    nacos:
