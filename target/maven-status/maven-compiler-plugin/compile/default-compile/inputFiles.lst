@@ -1,2 +1,7 @@
+/Applications/mqz/nacos-consumer-a/src/main/java/com/mqz/nacos/consumer/a/feign/ProviderService.java
+/Applications/mqz/nacos-consumer-a/src/main/java/com/mqz/nacos/consumer/a/common/WebRequestMapping.java
+/Applications/mqz/nacos-consumer-a/src/main/java/com/mqz/nacos/consumer/a/feignError/ProviderServiceImpl.java
 /Applications/mqz/nacos-consumer-a/src/main/java/com/mqz/nacos/consumer/a/NacosConsumerAApplication.java
 /Applications/mqz/nacos-consumer-a/src/main/java/com/mqz/nacos/consumer/a/web/ANacosWebController.java
+/Applications/mqz/nacos-consumer-a/src/main/java/com/mqz/nacos/consumer/a/handler/AccessInterceptor.java
+/Applications/mqz/nacos-consumer-a/src/main/java/com/mqz/nacos/consumer/a/handler/MyWebConfiguration.java

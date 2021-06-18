@@ -6,7 +6,7 @@ ENV APP_NAME="nacos-consumer-a-0.0.1"
 ARG JAR_NAME=${APP_NAME}
 #此处必须这么指定，ARG参数在最终的ENTRYPOINT执行时会出现问题
 ENV FILE_NAME="${JAR_NAME}.jar"
-ENV WORK_DIR="/home/mqz/aliyunImages/${APP_NAME}"
+ENV WORK_DIR="/home/mqz/nacos-project/consumer/${APP_NAME}"
 ENV JAVA_MS="1G"
 ENV JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Dlog4j.defaultInitOverride=true -Dorg.apache.tomcat.util.http.ServerCookie.ALLOW_EQUALS_IN_VALUE=true -Dorg.apache.tomcat.util.http.ServerCookie.ALLOW_HTTP_SEPARATORS_IN_V0=true -server  -XX:MetaspaceSize=256m -XX:MaxMetaspaceSize=256m -Xmn256m -XX:SurvivorRatio=10 -XX:+UseConcMarkSweepGC -XX:CMSMaxAbortablePrecleanTime=5000 -XX:+CMSClassUnloadingEnabled -XX:CMSInitiatingOccupancyFraction=80 -XX:+UseCMSInitiatingOccupancyOnly -XX:+ExplicitGCInvokesConcurrent -Dsun.rmi.dgc.server.gcInterval=2592000000 -Dsun.rmi.dgc.client.gcInterval=2592000000 -XX:ParallelGCThreads=4 -Djava.awt.headless=true -Dsun.net.client.defaultConnectTimeout=10000 -Dsun.net.client.defaultReadTimeout=30000  -Dfile.encoding=utf-8"
 RUN mkdir -p  ${WORK_DIR}

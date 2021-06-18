@@ -1,2 +1,7 @@
-com/mqz/nacos/consumer/a/web/ANacosWebController.class
+com/mqz/nacos/consumer/a/common/WebRequestMapping.class
+com/mqz/nacos/consumer/a/feign/ProviderService.class
+com/mqz/nacos/consumer/a/handler/MyWebConfiguration.class
 com/mqz/nacos/consumer/a/NacosConsumerAApplication.class
+com/mqz/nacos/consumer/a/feignError/ProviderServiceImpl.class
+com/mqz/nacos/consumer/a/handler/AccessInterceptor.class
+com/mqz/nacos/consumer/a/web/ANacosWebController.class
