@@ -10,4 +10,4 @@ spring:
 #  cloud:
 #    nacos:
 #      discovery:
-#        server-addr: 8.130.165.67:8848 #读取pom文件中的配置信息
+#        server-addr: 192.168.2.11:8848 #读取pom文件中的配置信息

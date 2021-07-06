@@ -141,7 +141,7 @@
             <id>dev</id>
             <properties>
                 <profileActive>dev</profileActive>
-                <nacosAddress>8.130.165.67:8848</nacosAddress>
+                <nacosAddress>192.168.2.11:8848</nacosAddress>
                 <nacosNameSpace>a77c2420-289a-44de-8d50-cef6f8efa40f</nacosNameSpace>
                 <aliNameSpace>nacos-project</aliNameSpace><!--阿里云镜像仓库命名空间，有一个环境区分dev/prod的命名空间-->
             </properties>
