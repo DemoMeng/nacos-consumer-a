@@ -18,6 +18,8 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
         <sba.client.version>2.1.0</sba.client.version>
+        <mars.swagger.version>0.0.1</mars.swagger.version>
+        <mars.base.version>0.0.1</mars.base.version>
     </properties>
     <dependencies>
         <dependency>
@@ -117,6 +119,23 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
             <version>2.1.5.RELEASE</version>
         </dependency>-->
+
+        <!-- 公共依赖 mars-swagger ： -->
+        <dependency>
+            <groupId>com.mqz.mars.swagger</groupId>
+            <artifactId>mars-swagger</artifactId>
+            <version>${mars.swagger.version}</version>
+        </dependency>
+
+        <!-- 公共依赖 mars-base ：  -->
+        <dependency>
+            <groupId>com.mqz.mars.base</groupId>
+            <artifactId>mars-base</artifactId>
+            <version>${mars.base.version}</version>
+        </dependency>
+
+
+
 
 
     </dependencies>

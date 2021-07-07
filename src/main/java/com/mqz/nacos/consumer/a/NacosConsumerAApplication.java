@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author mqz
@@ -16,6 +17,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
+@ComponentScan(value = {"com.mqz"})//需要扫描到底层包mars项目
 @EnableFeignClients(basePackages = {"com.mqz.nacos.consumer.a.**"})
 //@NacosPropertySource(dataId = "mqz-data-id", autoRefreshed = true)  //使用 @NacosPropertySource 加载 dataId 为 example 的配置源，并开启自动更新：
 public class NacosConsumerAApplication {

@@ -13,3 +13,31 @@ spring:
 #    nacos:
 #      discovery:
 #        server-addr: 192.168.2.11:8848 #读取pom文件中的配置信息
+
+
+
+
+
+#配置swagger-ui 密码登陆
+swagger:
+  production: false
+  basic:
+    enable: true
+    username: mqz
+    password: mqz
+  #自定义配置，是否开启swagger
+  enabled: true
+  info:
+    title: 消费方-在线接口文档
+    description: 蒙大拿
+    url: http://localhost:12340/doc.html
+    contact: https://github.com/DemoMeng
+    version: 1.0
+
+
+jwt:
+  secret: Mars-Cloud
+  key:
+    userId: USER_ID
+    token: TOKEN
+    roleIdList: ROLE_ID_LIST
