@@ -1,7 +1,7 @@
 # Nacos简介
 
 - 是啥：
-    *注册中心+配置中心的结合 ： Nacos=Eureka+Config+Bus
+    * 注册中心+配置中心的结合 ： Nacos=Eureka+Config+Bus
 - Nacos支持AP或者CP两种模式，并且还能进行切换
   * 注意：是能切换，而不是支持CAP这种模式。是支持AP或者CP。
   * CAP理论：（一个分布式系统不可能同时满足C和A，只能在CP或者AP，也就是需要在C和A中寻求平衡）

@@ -7,7 +7,7 @@
 
 
 
-MySQL 5.7 (官方镜像不支持mysql8)
+MySQL 5.7 (官方镜像和mysql8有冲突的情况)
 ![nacos-mysql持久化报错](images/nacos-mysql持久化问题-1.jpg)
 
 
