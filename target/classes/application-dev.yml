@@ -10,20 +10,30 @@ spring:
     allow-bean-definition-overriding: true
 
 
+# 开启 hystrix 支持（ 熔断，降级，限流）
+feign:
+  hystrix:
+    enabled: true
+
+
 #配置ribbon，负载均衡配置
 ribbon:
   ConnectionTimeout: 500
   ReadTimeout: 500
 
+
+
+
+
+#@FeignClient 注解中的 name 或 value 属性值来设置对应的 Ribbon请求的服务方，创建 Feign 客户端的时候，同时也会创建一个名为nacos-provider-a的 Ribbon 客户端。
 #针对服务进行负载配置
 nacos-provider-a:
   ribbon:
-      connectionTimeout: 700
-      ReadTimeout: 700
-
-
-
-
+      connectionTimeout: 700 #请求连接超时时间
+      ReadTimeout: 700 # 请求处理的超时时间
+      OkToRetryOnAllOperations: true #对所有请求都进行重试(是否所有操作都重试，若false则仅get请求重试)
+      MaxAutoRetries: 1 #对当前实例的重试次数
+      MaxAutoRetriesNextServer: 2 #切换实例的重试次数
 
 #spring:
 #  cloud:

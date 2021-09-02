@@ -1,5 +1,6 @@
 package com.mqz.nacos.consumer.a.feign;
 
+import com.mqz.nacos.consumer.a.feignError.FeignApiServiceImpl;
 import com.mqz.nacos.feign.api.FeignApi;
 import org.springframework.cloud.openfeign.FeignClient;
 
@@ -11,8 +12,7 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @Description
  * @About： https://github.com/DemoMeng
  */
-@FeignClient(name = "nacos-provider-a")
+@FeignClient(name = "nacos-provider-a",fallback = FeignApiServiceImpl.class)
 public interface FeignApiService extends FeignApi {
-
 
 }
