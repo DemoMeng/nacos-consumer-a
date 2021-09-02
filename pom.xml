@@ -20,6 +20,8 @@
         <sba.client.version>2.1.0</sba.client.version>
         <mars.swagger.version>0.0.1</mars.swagger.version>
         <mars.base.version>0.0.1</mars.base.version>
+        <mars.swagger.better.version>0.0.1</mars.swagger.better.version>
+        <nacos.feign.version>0.0.1</nacos.feign.version>
     </properties>
     <dependencies>
         <dependency>
@@ -92,6 +94,7 @@
             <version>1.28</version>
         </dependency>
 
+        <!-- openfeign 消费方依赖，需要搭配springcloud依赖 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
@@ -121,11 +124,18 @@
         </dependency>-->
 
         <!-- 公共依赖 mars-swagger ： -->
-        <dependency>
+        <!--<dependency>
             <groupId>com.mqz.mars.swagger</groupId>
             <artifactId>mars-swagger</artifactId>
             <version>${mars.swagger.version}</version>
+        </dependency>-->
+
+        <dependency>
+            <groupId>com.mqz.mars.swagger.better</groupId>
+            <artifactId>mars-swagger-better</artifactId>
+            <version>${mars.swagger.better.version}</version>
         </dependency>
+
 
         <!-- 公共依赖 mars-base ：  -->
         <dependency>
@@ -134,8 +144,11 @@
             <version>${mars.base.version}</version>
         </dependency>
 
-
-
+        <dependency>
+            <groupId>com.mqz.nacos.feign</groupId>
+            <artifactId>nacos-feign</artifactId>
+            <version>${nacos.feign.version}</version>
+        </dependency>
 
 
     </dependencies>
