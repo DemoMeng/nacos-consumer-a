@@ -10,17 +10,35 @@ spring:
     allow-bean-definition-overriding: true
 
 
-# 开启 hystrix 支持（ 熔断，降级，限流）
+#feign配置
 feign:
   hystrix:
-    enabled: true
+    enabled: true # 开启 hystrix 支持（ 熔断，降级，限流）
+
+  #配置 OpenFeign通信日志
+  client:
+    config:
+      default:
+        loggerLevel: FULL #默认日志输出级别
+
+      nacos-provider-a:
+        loggerLevel: FULL #针对某个服务设置的日志输出级别
+
+#        1. NONE:不输出任何通信日志
+#        2. BASIC:只包含URL,请求方法,状态码,执行时间
+#        3. HEADERS:在BASIC基础上额外包含请求和响应头
+#        4. FULL:包含请求与相应内容最完整的信息
+#        注意:针对某个微服务设置了通信日志输出级别(那么该输出级别就为最高级别也是最终级别)
+#        在日常开发中可以使用FULL 一般推荐使用BASIC/HEADERS
+
+
+
 
 
 #配置ribbon，负载均衡配置
 ribbon:
   ConnectionTimeout: 500
   ReadTimeout: 500
-
 
 
 
