@@ -1,12 +1,12 @@
 # docker swarm:集群配置
 - docker swarm leave : 删除当前docker集群节点，如果是管理节点： docker swarm leave --force
 - docker swarm init: 初始docker集群，该命令会自动把当前服务器作为一个管理节点，执行该命令返回的信息：
-
-    * Swarm initialized: current node (je4ga4hyb1lel6gtlzkegsbu8) is now a manager.
-    * To add a worker to this swarm, run the following command:
-    *     docker swarm join --token SWMTKN-1-2t4juac2s9j94ocnypc6mql6w8szh49lfz7d7vdle4ct2h8lxt-071wuhx12veggfoqm2gblqsuf 192.168.65.3:2377
-    * To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
-    
+  ````
+    Swarm initialized: current node (je4ga4hyb1lel6gtlzkegsbu8) is now a manager.
+    To add a worker to this swarm, run the following command:
+    docker swarm join --token SWMTKN-1-2t4juac2s9j94ocnypc6mql6w8szh49lfz7d7vdle4ct2h8lxt-071wuhx12veggfoqm2gblqsuf 192.168.65.3:2377
+    To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+  ````  
 - dokcer swarm init --advertise-addr:阿里云的公网和内网ip时候需要指定一个ip作为当前nacos节点的ip
     * ![docker-swarm-init-1](../images/docker-swarm-2.jpg)
     
