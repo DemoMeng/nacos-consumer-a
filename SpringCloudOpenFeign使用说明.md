@@ -41,6 +41,10 @@
     service-a.connectTime = 500
 
 
+## 从SpringCloudEdgware开始，Feign支持使用属性自定义Feign。对于一个指定名称的FeignClient（例如该FeignClient的名称为feignName），Feign支持如下配置项：
+![img.png](images/feign级配置.png)
+
+
 
 
 

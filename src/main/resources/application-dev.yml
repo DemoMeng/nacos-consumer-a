@@ -20,16 +20,24 @@ feign:
     config:
       default:
         loggerLevel: FULL #默认日志输出级别
-
       nacos-provider-a:
         loggerLevel: FULL #针对某个服务设置的日志输出级别
-
 #        1. NONE:不输出任何通信日志
 #        2. BASIC:只包含URL,请求方法,状态码,执行时间
 #        3. HEADERS:在BASIC基础上额外包含请求和响应头
 #        4. FULL:包含请求与相应内容最完整的信息
 #        注意:针对某个微服务设置了通信日志输出级别(那么该输出级别就为最高级别也是最终级别)
 #        在日常开发中可以使用FULL 一般推荐使用BASIC/HEADERS
+
+  #请求和响应进行GZIP压缩,减少通信过程中的性能损耗
+  compression:
+    request:
+      enabled: true #请求开启gzip压缩
+      mime-types: text/xml,application/xml,application/json #设置压缩的数据类型
+      min-request-size: 2048 #设置触发压缩的最小值
+    response:
+      enabled: true #响应开启gzip压缩
+
 
 
 
@@ -98,3 +106,4 @@ jwt:
     userId: USER_ID
     token: TOKEN
     roleIdList: ROLE_ID_LIST
+

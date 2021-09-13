@@ -8,6 +8,7 @@ services:
       - MODE=standalone
       - PREFER_HOST_MODE=hostname
       - NACOS_SERVERS=nacos-1:8848 #nacos-2:8848 nacos-3:8848
+      - TZ=Asia/Shanghai #设置容器时区
       #  下面的配置已经放到的nacos-hostname.env的配置中
       # - SPRING_DATASOURCE_PLATFORM=mysql
       # - MYSQL_SERVICE_HOST=192.168.1.20

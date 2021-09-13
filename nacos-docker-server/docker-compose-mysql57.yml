@@ -39,4 +39,5 @@ services:
     privileged: true #针对chown: changing ownership of '/var/lib/mysql/': Input/output error 没权限的情况下
     restart: on-failure
     environment:
-      MYSQL_ROOT_PASSWORD: "mengqizhang"
+      - MYSQL_ROOT_PASSWORD=mengqizhang
+      - TZ=Asia/Shanghai #设置容器时区

@@ -8,3 +8,5 @@ services:
     ports:
       - "9000:9000"
     restart: on-failure
+    environment:
+      - TZ=Asia/Shanghai #设置容器时区
