@@ -64,7 +64,9 @@
         @RequestHeader("name") String name
         @RequestBody User user
 
-    注意：在定义各参数绑定时，@RequestParam、@RequestHeader 等可以指定参数名称的注解，它们的 value 不能为空。虽然在 Spring MVC 程序中，这些注解会根据参数名来作为默认值，但是在 Feign 中绑定参数必须通过 value 属性来指明具体参数名，不然会抛出 IllegalStateException 异常。
+    注意：在定义各参数绑定时，@RequestParam、@RequestHeader 等可以指定参数名称的注解，它们的 value 不能为空。
+         虽然在 Spring MVC 程序中，这些注解会根据参数名来作为默认值，但是在 Feign 中绑定参数必须通过 value 属性来指明具体参数名，
+         不然会抛出 IllegalStateException 异常。
 
 
 ##### 2.继承特性：
