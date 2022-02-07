@@ -32,8 +32,6 @@
    1. grant all privileges on *.* to 'root'@'%' with grant option;
    2. flush privileges;
  
- 
- 
  GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'mengqizhang' WITH GRANT OPTION;
 
 

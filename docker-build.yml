@@ -1,6 +1,6 @@
 version: '2'
 services:
-  nacos-gateway:
+  nacos-consumer-a:
     build:
       context: ./
     restart: always
